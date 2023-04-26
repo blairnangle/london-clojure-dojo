@@ -9,8 +9,6 @@
 
 (def options (:options (parse-opts *command-line-args* cli-options)))
 
-(defn filter-grab-line-number [found]
-  (filter #(when (some? %) (.indexOf found)) found))
 
 (defn grep-file [file string]
   (let [lines (fs/read-all-lines file)
