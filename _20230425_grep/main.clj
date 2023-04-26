@@ -23,7 +23,7 @@
   (for [f (fs/glob root file)
         :let [found (grep-file f string)]
         :when (some? (last found))]
-    {:file (str f) :matches (grep-file f string)}))
+    {:file (str f) :matches found}))
 
 
 
