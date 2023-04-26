@@ -15,17 +15,16 @@
 (defn grep-file [file string]
   (let [lines (fs/read-all-lines file)
         found (map #(re-find (re-pattern string) %) lines)
-        zmap (map vector (range 1 (inc (count lines))) lines found)]
-    (filter #(not (nil? (last %))) zmap)))
+        zmap (map vector (range 1 (inc (count lines))) lines found)
+        filtered (filter #(not (nil? (last %))) zmap)]
+    filtered))
 
 
 (defn grep-files
   [file string root]
   (for [f (fs/glob root file)
-        :let [text (slurp (str f))
-              ;x (prn text)
-              ]
-        :when (re-find (re-pattern string) text)]
+        :let [found (grep-file f string)]
+        :when (some? (last found))]
     {:file (str f) :matches (grep-file f string)}))
 
 
