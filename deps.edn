@@ -1,4 +1,4 @@
 {:paths ["src"]
- :deps  {}
+ :deps  {org.clojure/data.priority-map {:mvn/version "1.2.0"}}
  :aliases
  {:neil {:project {:name london-clojure-dojo}}}}
