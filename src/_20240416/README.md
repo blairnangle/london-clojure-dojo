@@ -1,4 +1,4 @@
-# 2024-04-16
+# 2024-04-16: Word bee
 
 ## Problem overview
 
@@ -115,7 +115,7 @@ the latter.
 ## Result
 
 ```shell
-time clojure -M -m _202240416.bee
+time clojure -M -m _20240416.bee
 ```
 
 ```shell
