@@ -11,15 +11,15 @@
 (def options (:options (parse-opts *command-line-args* cli-options)))
 
 (defn filter-grab-line-number [found]
-      (filter #(when (some? %) (.indexOf found)) found))
+  (filter #(when (some? %) (.indexOf found)) found))
 
 (defn grep-file [file string]
-      (let [lines (fs/read-all-lines file)
-            found (map #(re-find (re-pattern string) %) lines)]
-           (loop [l lines f found r []]
-                 (recur (rest l) (rest f) (if (some? f)
-                                            (conj r {:line l})
-                                            r)))))
+  (let [lines (fs/read-all-lines file)
+        found (map #(re-find (re-pattern string) %) lines)]
+    (loop [l lines f found r []]
+      (recur (rest l) (rest f) (if (some? f)
+                                 (conj r {:line l})
+                                 r)))))
 
 
 

@@ -1,6 +1,6 @@
 # 2023-04-25
 
-Implement `grep` using Clojure and Babashka. 
+Implement `grep` using Clojure and Babashka (incomplete).
 
 ## Example usage
 
