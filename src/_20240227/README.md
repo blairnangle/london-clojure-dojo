@@ -31,4 +31,6 @@ Assuming left-to-right (positive) travel, once we know which kangaroo is to the 
 
 ## The Grid Search
 
+(Incomplete.)
+
 - [HackerRank problem](https://www.hackerrank.com/challenges/the-grid-search/problem)
